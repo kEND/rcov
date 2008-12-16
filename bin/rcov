@@ -205,9 +205,9 @@ EOF
             "(default: --html)") do |val|
         options.html = val
     end
-    opts.on("--sort CRITERION", [:name, :loc, :coverage],
+    opts.on("--sort CRITERION", [:name, :loc, :coverage, :uncovered],
             "Sort files in the output by the specified",
-            "field (name, loc, coverage)") do |criterion|
+            "field (name, loc, coverage, uncovered)") do |criterion|
         options.sort = criterion
     end
     opts.on("--sort-reverse", "Reverse files in the output.") do

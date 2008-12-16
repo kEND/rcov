@@ -98,6 +98,7 @@ class Formatter # :nodoc:
         @sort_criterium = case options[:sort]
             when :loc : lambda{|fname, finfo| finfo.num_code_lines}
             when :coverage : lambda{|fname, finfo| finfo.code_coverage}
+            when :uncovered : lambda{|fname, finfo| finfo.num_code_lines * (1 - finfo.code_coverage)}
             else lambda{|fname, finfo| fname}
         end
         @sort_reverse = options[:sort_reverse]
